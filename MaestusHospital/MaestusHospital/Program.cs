@@ -1,6 +1,14 @@
+using MaestusHospital.Data; 
+using Microsoft.EntityFrameworkCore; 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//registering HospitalDbContext with dependency injection
+builder.Services.AddDbContext<HospitalDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+//razor pages service
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
