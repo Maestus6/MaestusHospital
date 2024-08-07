@@ -1,0 +1,33 @@
+﻿# Build artifacts
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Visual Studio Code
+.vscode/
+
+# User-specific files
+*.userosscache
+*.sln.docstates
+
+# Backup & temporary files
+*.tmp
+*.bak
+*.swp
+
+# Logs
+*.log
+
+# Entity Framework
+*.ide
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Rider
+.idea/
