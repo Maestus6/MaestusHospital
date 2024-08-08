@@ -34,3 +34,5 @@ _ReSharper*/
 
 # Rider
 .idea/
+/MaestusHospital/MaestusHospital/Migrations/20240808020153_InitialCreate.cs
+/MaestusHospital/MaestusHospital/Migrations/20240808020153_InitialCreate.Designer.cs
