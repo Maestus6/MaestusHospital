@@ -1,0 +1,61 @@
+﻿@page
+@model MaestusHospital.Pages.Bills.IndexModel
+
+@{
+    ViewData["Title"] = "Bills";
+}
+
+<h1>Bills</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Create New Bill</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Bill[0].BillDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bill[0].Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bill[0].IsPaid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bill[0].PaymentMethod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bill[0].Patient.FirstName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Bill)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BillDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsPaid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentMethod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Patient.FirstName)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

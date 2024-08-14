@@ -1,0 +1,48 @@
+﻿@page
+@model MaestusHospital.Pages.Bills.CreateModel
+
+@{
+    ViewData["Title"] = "Create Bill";
+}
+
+<h1>Create Bill</h1>
+
+<h4>Bill</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Bill.BillDate" class="control-label"></label>
+                <input asp-for="Bill.BillDate" class="form-control" type="date" />
+                <span asp-validation-for="Bill.BillDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bill.Amount" class="control-label"></label>
+                <input asp-for="Bill.Amount" class="form-control" type="number" step="0.01" />
+                <span asp-validation-for="Bill.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bill.IsPaid" class="control-label"></label>
+                <input asp-for="Bill.IsPaid" class="form-control" type="checkbox" />
+                <span asp-validation-for="Bill.IsPaid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bill.PaymentMethod" class="control-label"></label>
+                <input asp-for="Bill.PaymentMethod" class="form-control" />
+                <span asp-validation-for="Bill.PaymentMethod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bill.PatientId" class="control-label">Patient</label>
+                <select asp-for="Bill.PatientId" class="form-control" asp-items="Model.Patients"></select>
+                <span asp-validation-for="Bill.PatientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
